@@ -9,7 +9,7 @@ const Navbar = () => {
         <ul className="flex justify-between m-10 item-center">
             <div>
                 <Link href="/">
-                    <li>Acceuil</li>
+                    <li>UPSound</li>
                 </Link>
             </div>
             <div className='flex gap-10'>
