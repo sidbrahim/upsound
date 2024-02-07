@@ -28,22 +28,27 @@ const Register = () => {
             return;
           }
 
-        try {
-            const res = await fetch('/api/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({email, password})
-            })
-            const data = await res.json()
-            if(data.error){
-                setError(data.error)
-            }else{
-                router.push('/login')
-            }
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+      if (res.status === 400) {
+        setError("This email is already registered");
+      }
+      if (res.status === 200) {
+        setError("");
+        router.push("/login");
+      }
     } catch (error) {
-        console.log(error)
+      setError("Error, try again");
+      console.log(error);
     }
     }
   return (

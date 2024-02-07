@@ -1,27 +1,31 @@
-import User from '@/models/User';
-import connect from '@/utils/db';
-import bcrypt from 'bcryptjs';
-import { NextResponse } from 'next/server';
+import User from "@/models/User";
+import connect from "@/utils/db";
+import bcrypt from "bcryptjs";
+import { NextResponse } from "next/server";
 
-export const POST = async (request:any) => {
-    const { email, password } = await request.json();
-    
-    await connect();
+export const POST = async (request: any) => {
+  const { email, password } = await request.json();
 
-    const existingUser = await User.findOne({ email});
+  await connect();
 
-    if (existingUser) {
-        return new NextResponse('Cet utilisateur existe déjà', { status: 400 });
-    }
+  const existingUser = await User.findOne({ email });
 
-    const hashedPassword = await bcrypt.hash(password, 5);
+  if (existingUser) {
+    return new NextResponse("Email is already in use", { status: 400 });
+  }
 
-    const newUser = new User({ email, password: hashedPassword });
-    
-    try {
-        await newUser.save();
-        return new NextResponse('Utilisateur créé', { status: 201 });
-    } catch (error) {
-        return new NextResponse('Erreur lors de la création de l\'utilisateur', { status: 500 });
-    }
-}
+  const hashedPassword = await bcrypt.hash(password, 5);
+  const newUser = new User({
+    email,
+    password: hashedPassword,
+  });
+
+  try {
+    await newUser.save();
+    return new NextResponse("user is registered", { status: 200 });
+  } catch (err: any) {
+    return new NextResponse(err, {
+      status: 500,
+    });
+  }
+};
