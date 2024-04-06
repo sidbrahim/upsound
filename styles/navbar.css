@@ -1,0 +1,538 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'roboto',sans-serif;
+    
+}
+header {
+    margin-top: -50px; 
+}
+
+.bar{
+    position: sticky;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100px;
+
+    
+}
+
+.logo{
+    width: 60%;
+    height: 60%;
+}
+
+
+.nav-items{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+
+}
+
+
+.nav-items a{
+    width:300px;
+    padding:1rem;
+    text-decoration: none;
+    color:#1E90FF;
+   
+    
+}
+
+.icon{
+    height:30px;
+    margin-bottom: -5px;
+
+}
+
+.container {
+    display: flex;
+    
+}
+
+
+.sidebar {
+    width: 200px; 
+    height: 25vh; 
+    background-color: #FBF9EA; 
+    border-radius: 15px 50px 30px 5px;
+    margin-top: 50px;
+}
+
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px;
+    
+    padding: 0;
+   
+}
+
+.sidebar li {
+    padding: 17px;
+}
+.sidebar li img {
+    width: 17px; 
+    height: 17px;
+    margin-right: 10px; 
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black; 
+    display: block;
+}
+
+
+.sidebar a:hover {
+    color: #FBF9EA; 
+    background-color: #fff; 
+}
+
+.sidebar-hidden {
+    display: none;
+}
+.content {
+    flex: 1; 
+    padding: 20px;
+    margin-top: 50px;
+}
+
+
+.columned-paragraph {
+    column-count: 3;
+    column-gap: 20px;
+    padding: 15px;
+    color: #545454;
+}
+
+
+
+.box {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.wrap{
+    width:960px;
+    margin :0 auto;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 50px;
+    width: 30%;
+    background-color: #FBF9EA;
+   
+   
+}
+.search-bar input {
+    border: none;
+    outline: none; 
+    background-color: #FBF9EA;
+    color: black;
+    
+  
+
+}
+
+
+.search-content {
+    display: flex;
+    align-items: center;
+}
+.search-icon {
+    width: 20px; 
+    height: 20px; 
+    margin-right: 5px;
+}
+.search-text {
+    font-size: 20px;
+    color: #555; 
+    font-weight: bold;
+    margin-right: 10px;
+}
+.item button {
+    border: none;
+    border-radius: 50px; 
+    padding: 1px 15px;
+    background-color: #FBF9EA;
+    color: black; 
+    cursor: pointer;
+}
+
+.musique-carte {
+    position: relative;
+}
+
+.card-container,.card-container-m{
+    
+    margin-top: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; 
+    /*overflow: auto;*/
+    padding: 0 10vw;
+  
+    
+    
+}
+.card-container::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+.card ,.card-m {
+    width: 250px;
+    height: 250px;
+    border-radius: 35px;
+    background-color: #FBF9EA;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    position: relative; 
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    flex:0 0 auto;  
+}
+.card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img,.card-m img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: -25%; 
+    margin-left: 20%;
+    margin-right: 20%;
+   
+  
+   
+   
+    
+
+}
+.card:nth-child(3n) {
+    margin-right: 1rem; 
+  }
+.card .information-card,.card-m .information-card-m  {
+    position: absolute;
+    top:90px;
+    width: 100%;
+    height: 50%; 
+    padding: 10px;
+    box-sizing: border-box;
+    
+   
+}
+
+
+.card h2,.card-m h2 {
+    margin: 10px;
+   
+    font-size: 22px;
+    text-align: center;
+    
+}
+
+
+.card h3,.card-m h3 {
+    margin: 5px 10px;
+    font-size: 18px;
+    color: #F3DC7A;
+   text-align: center;
+   
+}
+
+
+.card button ,.card-m button {
+    width: 50%; 
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+
+.card .voir-button,.card-m .voir-button  {
+    background-color: #F3DC7A; 
+    color: white; 
+    font-size: 13.5px;
+    float: left;
+    padding: 5px;
+    border-radius: 30px;
+    width: 30%;
+    height: 30px;
+    margin-left:40px ;
+    margin-top: 20px;
+}
+
+
+.card .like-button,.card-m .like-button  {
+    background-color: #F3DC7A;
+    color: white; 
+    float: right;
+    font-size: 13.5px;
+    padding: 5px;
+    border-radius: 30px;
+    width: 30%;
+    height: 30px;
+    margin-right:40px ;
+    margin-top: 20px;
+
+}
+.card-m .voir-button img,
+.card-m .like-button img,.card .voir-button img,
+.card .like-button img {
+    width: 16px; 
+    height: 16px;
+    margin-left: 1px;
+    vertical-align: middle;
+    margin-top: 140px;
+   
+
+   
+}
+.card-m .voir-button span,.card-m .like-button span,.card .voir-button span,.card .like-button span{
+    margin-left: 10px;
+   
+
+   
+}
+/*
+.avant-btn,.apres-btn{
+    border:none;
+    width:5vw;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(90deg,rgba(255,255,255,0)0%,#fff 100%);
+    cursor:pointer;
+    z-index:6;
+  
+  }
+  .avant-btn{
+    left:0;
+    transform: rotate(180deg);
+  
+  }
+  .apres-btn{
+    right: 0;
+  }
+  .apres-btn img,.avant-btn img{
+    opacity: 0.2;
+  }
+  .apres-btn:hover img,.avant-btn:hover img{
+    opacity: 1;
+  }
+  */
+
+
+
+.content-music {
+   
+    flex-grow: 1;
+    margin-top: 160px;
+}
+
+.card-container-music {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+}
+.card-m {
+  
+    margin: 10px;
+    margin-bottom: 100px;
+    margin-left: 20px;
+    
+    
+}
+
+
+.conteneur {
+  
+    
+   
+    margin-top: 100px; 
+  }
+
+.carte-musique {
+    display: flex;
+    border: 1px solid #FBF9EA;
+    border-radius: 15px;
+    background-color: #FBF9EA;
+    max-width: 750px;
+    align-items: center;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 20px; 
+  }
+  
+  
+  .vinyl {
+    width: 100px; 
+    height: 100px; 
+    background-image: url('/vynel.png');
+    background-size: cover; 
+    position:absolute;
+    margin-top:-125px;
+    margin-left: 970px;
+   
+  }
+  
+  .pochette-musique {
+    width: 85px;
+    height: 85px;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+  
+  .details-musique {
+    flex: 1;
+  }
+  
+  .nom-artiste {
+    font-size: 18px;
+    margin-left: 25px;
+  }
+  
+  .titre-morceau {
+    font-size: 16px;
+    margin: 5px 0;
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+  
+  .boutons-action {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bouton-voir {
+    display: flex;
+    align-items: center;
+    padding: 8px 13px;
+    background-color: #F3DC7A;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    margin-right: 35px;
+  }
+  
+  .bouton-voir img {
+    width: 20px; 
+    height: auto; 
+    margin-right: 5px; 
+  }
+  
+  .icone-j-aime img {
+    width: 25px; 
+    height: auto; 
+    margin-right: 35px;
+    
+  }
+  .conteneur {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+  }
+  
+  .contenu {
+    display: flex;
+    
+  }
+  
+  .contenu img {
+    width: 300px;
+    height: 300px;
+    margin-left:10px;
+   
+  }
+  
+  .details {
+    flex: 1;
+    padding: 15px;
+    margin-top: 50px;
+    background-color: #F3DC7A;
+    border-radius: 0 500px 500px 0;
+  }
+  
+  .details h2, .details h3, .details p {
+    margin: 0;
+  }
+  
+  .details h2 {
+    font-size: 63px;
+    color: #FFFFFF;
+  }
+  .details h3 {
+    font-size: 42px;
+  }
+  .details p {
+    padding: 5px;
+    margin: 5px;
+  }
+  .icon-temps:before {
+    content: "\1F55B"; 
+    margin-right: 5px; 
+  }
+  
+  .icon-calendrier:before {
+    content: "\1F4C5"; 
+    margin-right: 5px; 
+  }
+  
+  .demi-vinyl  {
+   position: absolute;
+   margin-top:34px;
+   margin-left: 1090px;
+   width: 285px;
+   height: 285px;
+  }
+  .rec-music h2 {
+
+    font-size: 24px;
+    position: absolute;
+    margin-left: 60px;
+    margin-top: 37px;
+    
+    
+    
+   }
+   .rec-music img {
+
+    width: 60px;
+    height:60px;
+    position: absolute;
+    margin-top: 20px;
+   
+    
+   }
+   
+
+  
