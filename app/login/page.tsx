@@ -13,7 +13,7 @@ const Login = () => {
 
     useEffect(() => {
         if (session?.status === "authenticated") {
-            router.replace("/dashboard");
+            router.replace("/music");
         }
       }, [session, router]);
 
@@ -45,7 +45,7 @@ const Login = () => {
             if (res?.error) {
                 setError("Email ou mot de passe incorrecte")
                 if (res?.url) {
-                    router.replace("/dashboard")
+                    router.replace("/music")
                 }
             } else {
                 setError("")

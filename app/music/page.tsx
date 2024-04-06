@@ -1,17 +1,16 @@
-'use client'
+
 import React, { use } from 'react'
-import { useState, useEffect } from 'react'
 import { getServerSession } from 'next-auth'
 import { notFound, redirect } from 'next/navigation'
 import axios from 'axios'
 import Image from 'next/image'
 import '../../styles/navbar.css'
-import Musiques from '../../components/Musiques'
-import Navbar from '../../components/Navbar'
 
 
 
-async function getServerSideProps() {
+
+
+async function getspotifyaccesstoken() {
 
 
   const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } = process.env;
@@ -40,7 +39,7 @@ async function getData(){
 
 
 
-async function getTrack(id, accessToken){
+async function getTrack(id:any, accessToken:any){
   try{
     const res = await fetch(`https://api.spotify.com/v1/tracks/${id}`, {
       headers: {
@@ -55,7 +54,7 @@ async function getTrack(id, accessToken){
   
 }
 
-async function getTrackImage(id, accessToken){
+async function getTrackImage(id:any, accessToken:any){
   try{
     const res = await getTrack(id, accessToken);
     if(res === null) return notFound();
@@ -65,35 +64,36 @@ async function getTrackImage(id, accessToken){
   }
 }
 
-const fetchData = async (inputValue) => {
-  console.log('searchQuery', inputValue);
-try {
-  const response = await axios.get('http://localhost:3000/api/songs', {
-    params: { search: inputValue },
-  });
-  setSongs(response.data);
-} catch (error) {
-  console.error('Error fetching data:', error);
-}
-};
+// const fetchData = async (inputValue) => {
+//   console.log('searchQuery', inputValue);
+// try {
+//   const response = await axios.get('http://localhost:3000/api/songs', {
+//     params: { search: inputValue },
+//   });
+//   setSongs(response.data);
+// } catch (error) {
+//   console.error('Error fetching data:', error);
+// }
+// };
 
 
 
 const Music = async () => {
 
-  const [musiques, setMusiques] = useState([]);
+//   const [musiques, setMusiques] = useState([]);
 
-useEffect(() => {
-  const getMusiques = async () => {
-    const response = await fetch('http://localhost:3000/api/musiques');
-    const musiques = await response.json();
-    setMusiques(musiques);
-  };
-  getMusiques();
-}, []);
+// useEffect(() => {
+//   const getMusiques = async () => {
+//     const response = await fetch('http://localhost:3000/api/musiques');
+//     const musiques = await response.json();
+//     setMusiques(musiques);
+//   };
+//   getMusiques();
+// }, []);
 
 
   const session = await getServerSession();
+  console.log(session);
   if (!session) {
     redirect('/login')
   }
@@ -101,7 +101,7 @@ useEffect(() => {
   const data = await getData();
   //console.log(data);
 
-  const { accessToken } = await getServerSideProps();
+  const { accessToken } = await getspotifyaccesstoken();
 
   //const track = await getTrack('0gNNToCW3qjabgTyBSjt3H', accessToken);
   //console.log('image url here:', track.album.images[0].url);
@@ -130,44 +130,45 @@ useEffect(() => {
 */
   return (
 
-    <div>
+//     <div>
 
-<Navbar getSearchResults={(results) => setMusiques(results)}/>
-
-
-<Musiques musiques={musiques} />
-
-    </div>
+// <Navbar getSearchResults={(results) => setMusiques(results)}/>
 
 
+// <Musiques musiques={musiques} />
 
-//     <div className="container">
-//         {data && data?.map(async (song) => (
+//     </div>
+
+
+
+    <div className="container">
+       
+        {data && data?.map(async (song:any) => (
     
-//     <div className="content-music">
+    <div className="content-music">
 
       
         
-//         <div className="card-container-music">
-//             <div className="card-m">
-//             <Image fill={true} src={await getTrackImage(song.id, accessToken)} alt=""/>
-//                 <div className="information-card-m">
-//                     <h2>{song.artist}</h2>
-//                     <h3>{song.name}</h3>
-//                     <button className="voir-button">
-//                         <span>See</span>
-//                         <Image src="/icons8-eye-30.png" alt="" width="20" height="20" /> 
-//                     </button>
-//                     <button className="like-button">
-//                         <span>Like</span>
-//                         <Image src="/icons8-like-30.png" alt="" width="20" height="20" /> 
-//                     </button>
-//                 </div> 
-//             </div>
-//         </div>
-//     </div>
-//     ))}
-// </div>
+        <div className="card-container-music">
+            <div className="card-m">
+            <Image fill={true} src={await getTrackImage(song.id, accessToken)} alt=""/>
+                <div className="information-card-m">
+                    <h2>{song.artist}</h2>
+                    <h3>{song.name}</h3>
+                    <button className="voir-button">
+                        <span>See</span>
+                        <Image src="/icons8-eye-30.png" alt="" width="20" height="20" /> 
+                    </button>
+                    <button className="like-button">
+                        <span>Like</span>
+                        <Image src="/icons8-like-30.png" alt="" width="20" height="20" /> 
+                    </button>
+                </div> 
+            </div>
+        </div>
+    </div>
+    ))}
+</div>
   )
 }
 
