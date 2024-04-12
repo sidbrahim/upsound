@@ -14,7 +14,7 @@ export default function Home() {
             <section className="musique-carte">
        
         <div className="card-container">
-            <div className="card">
+            {/* <div className="card">
                 <Image fill={true} src="/kendrick-lamar.png" alt="Nom de l'artiste" />
                 <div className="information-card">
                     <h2>Kendrick Lamar</h2>
@@ -73,7 +73,7 @@ export default function Home() {
                         <Image src="/icons8-like-30.png" alt="" width={20} height={20}/> 
                     </button>
                 </div>
-            </div>
+            </div> */}
             
             
         

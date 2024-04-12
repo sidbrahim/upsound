@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
-import React,{use, useEffect, useState} from 'react'
+import React,{useEffect} from 'react'
 import {signIn, useSession} from 'next-auth/react'
 import { set } from 'mongoose';
 

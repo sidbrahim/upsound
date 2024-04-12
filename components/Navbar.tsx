@@ -1,10 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 
-const Navbar = ({ session }: { session: any }
-    ) => {
+
+const Navbar = ({ session }: { session: any } ) => {
+
+
   return (
     <div>
       <ul className="flex justify-between m-10 item-center">

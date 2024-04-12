@@ -19,9 +19,9 @@ export  const GET = async (request: NextRequest) => {
           { name: { $regex: search, $options: 'i' } }, // Case-insensitive search for name
           { artists: { $regex: search, $options: 'i' } } // Case-insensitive search for artist
         ]
-      });
+      }).limit(6);
     } else {
-      songs = await Song.find({ artists: "['The Gaslight Anthem']" });
+      songs = await Song.find({ artists: "['The Gaslight Anthem']" }).limit(6);
     }
     return new NextResponse(JSON.stringify(songs), { status: 200 });
   } catch (err: any) {
