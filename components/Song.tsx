@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import VoirButton from "@/components/VoirButton";
 
 async function getSearchData(query:any){
-    const res = await fetch(`http://localhost:3000/api/songs?search=${query}`, {cache: 'no-store'});
+    const res = await fetch(`http://localhost:3000/api/musiques?search=${query}`, {cache: 'no-store'});
     if(!res.ok) return notFound();
     return res.json();
   }
@@ -57,7 +57,7 @@ async function getSearchData(query:any){
     return {accessToken}
   }
 
-export default async function Songs({
+export default async function Song({
     query,
   }: {
     query: string;

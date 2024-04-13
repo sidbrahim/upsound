@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/songs/route.ts", "app/music/page.tsx", "app/api/musiques/route.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/songs/route.ts", "app/songs/page.tsx", "app/api/musiques/route.ts"],
   "exclude": ["node_modules"]
 }

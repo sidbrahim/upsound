@@ -16,7 +16,7 @@ const Navbar = ({ session }: { session: any } ) => {
           </Link>
         </div>
         <div className="flex gap-10">
-          <Link href="/music">
+          <Link href="/songs">
             <li>Dashboard</li>
           </Link>
           {!session ? (

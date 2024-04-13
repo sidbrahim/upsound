@@ -10,7 +10,7 @@ const Sidebar = () => {
     <nav>
         <ul>
             <li ><Link href="/"><Image src="/icons8-home-50.png" alt="" width={20} height={20} />Home</Link></li>
-            <li> <Link href="/music"><Image src="/icons8-musical-note-50.png" alt=""width={20} height={20} />Music </Link></li>
+            <li> <Link href="/songs"><Image src="/icons8-musical-note-50.png" alt=""width={20} height={20} />Songs </Link></li>
             <li><Link href="/page3"><Image src="/icons8-love-48.png" alt="" width={20} height={20}/> Likes</Link></li>
         </ul>
     </nav>
