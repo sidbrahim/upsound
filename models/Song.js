@@ -8,24 +8,28 @@ const { Schema } = mongoose;
 
 const songSchema = new Schema(
     {
-        id : String,
-        name : String,
-        artists : String,
-        duration_ms : Number,
-        release_date : String,
+        valence : Number,
         year : Number,
         acousticness : Number,
+        artists : String,
         danceability : Number,
+        duration_ms : Number,
         energy : Number,
+        explicit : Number,
+        id : String,
         instrumentalness : Number,
+        key : Number,
         liveness : Number,
         loudness : Number,
+        mode : Number,
+        name : String,
+        popularity : Number,
+        release_date : String,
         speechiness : Number,
         tempo : Number,
-        valence : Number,
-        mode : Number,
-        key : Number,
-        popularity : Number,
+
+
+        
 
 
     })
