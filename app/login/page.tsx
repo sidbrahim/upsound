@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
-import React,{use, useEffect, useState} from 'react'
+import React,{useEffect} from 'react'
 import {signIn, useSession} from 'next-auth/react'
 import { set } from 'mongoose';
 
@@ -13,7 +13,7 @@ const Login = () => {
 
     useEffect(() => {
         if (session?.status === "authenticated") {
-            router.replace("/dashboard");
+            router.replace("/songs");
         }
       }, [session, router]);
 
@@ -45,7 +45,7 @@ const Login = () => {
             if (res?.error) {
                 setError("Email ou mot de passe incorrecte")
                 if (res?.url) {
-                    router.replace("/dashboard")
+                    router.replace("/songs")
                 }
             } else {
                 setError("")
